@@ -1,7 +1,11 @@
 package javaimplementation;
 
-public class linkedlist {
+import java.util.Scanner;
 
+import javaimplementation.binarytree.node;
+
+public class linkedlist {
+    //CLASS FOR NODE GENERATION
 	public static class Node {
 		int data;
 		Node next;
@@ -11,11 +15,13 @@ public class linkedlist {
 			this.next = null;
 		}
 	}
-
+	//STATIC NODES HEAD , TAIL FOR TRVERSING IN THE LINKED LIST 
 	public static Node head;
 	public static Node tail;
 	public static int size;
+	
 
+	// FUNCTION TO PRINT THE LINKED LIST
 	public static void printll() {
 		if (head == null) {
 			System.out.println("the linked list is empty");
@@ -29,7 +35,8 @@ public class linkedlist {
 		System.out.print("null");
 
 	}
-
+	
+	// FUNCTION TO ADD A NODE IN THE BEGINING OF THE LL
 	public static void addfirst(int data) {
 		Node newnode = new Node(data);
 		if (head == null) {
@@ -40,18 +47,22 @@ public class linkedlist {
 		head = newnode;
 	}
 
+	//FUNTION TO ADD A NODE IN THE END OF THE LL
 	public static void addlast(int data) {
 		Node newnode = new Node(data);
 		if (head == null) {
 			head = tail = newnode;
 			return;
 		}
-
-		//
+		Node cur =head;
+		while (cur.next!=null) {
+			cur=cur.next;
+		}
 		newnode.next = null;
 		tail = newnode;
 	}
 
+	// FUNCTION TO ADD A NODE IN THE MIDDLE OF THE LL
 	public static void addmiddle(int data, int idx) {
 		Node newnode = new Node(data);
 		int i = 0;
@@ -64,6 +75,26 @@ public class linkedlist {
 		temp.next = newnode;
 	}
 
+	//FUNCTION TO ADD A NODE IN THE MIDDLE OF THE LL USING TWO POINTER APPROACH
+	public static void addmidle2(int pos, int data){
+		Node newnode = new Node(data);
+		Node cur =head;
+		Node prev = null;
+		while (cur != null && pos>1){
+           prev=cur;
+           cur=cur.next;
+           pos--;
+		}
+		if(pos==1){
+			prev.next= newnode;
+			newnode.next= cur;
+		}
+		else{
+			System.out.println("short ll");
+		}
+	}
+	
+	//FUNCTION TO REVERSE THE LL
 	public static void llrev() {
 		Node prev = null;
 		Node curr = head;
@@ -77,6 +108,7 @@ public class linkedlist {
 		head = prev;
 	}
 
+	//FUNCTION TO REMOVE THE nth NODE FROM END
 	public static void removenthnode(int idx) {
 		int sz = 0;
 		Node temp = head;
@@ -99,7 +131,22 @@ public class linkedlist {
 		return;
 
 	}
+    
+	// DELETION OF NODE ANYWHERE
+	public static void delanyw(int pos){
+		Node cur =head;
+		Node prev = null;
+		while(cur!= null && pos>1){
+			prev=cur;
+			cur =cur.next;
+			pos--;
+		}
+		if(pos==1){
+			prev.next=cur.next;
+		}
+	}
 
+	// FUNTION TO FIND THE MIDDLE OF THE LL 
 	public Node findmid(Node head) {
 		Node fast = head;
 		Node slow = head;
@@ -109,7 +156,9 @@ public class linkedlist {
 		}
 		return slow;
 	}
+	
 
+	//FUNCTION TO CHECK WHEATHER THE LL IS PALINDROME
 	public boolean pallindrome() {
 		if (head == null || head.next == null) {
 			return true;
@@ -138,6 +187,8 @@ public class linkedlist {
 		return true;
 	}
 
+
+	// FUNCTION TO GENERATE A CYCLE IN A LL
 	public static Node generatecylell(Node head) {
 		Node temp = head;
 		while (temp.next != null) {
@@ -148,6 +199,7 @@ public class linkedlist {
 		return head;
 	}
 
+	// FUNCTION TO CHECK THE PRESENCE OF  CYCLE IN LL
 	public static boolean iscycle(Node head) {
 		Node slow = head;
 		Node fast = head;
@@ -160,15 +212,32 @@ public class linkedlist {
 		}
 		return false;
 	}
+	
+	//MAIN FUNCTION
 
 	public static void main(String[] args) {
-		linkedlist ll = new linkedlist();
-		linkedlist ll2 = new linkedlist();
-		for (int i = 5; i >= 1; i--) {
-			ll.addfirst(i);
-		}
-		ll.printll();
+		Scanner sc = new Scanner(System.in);
+		
+		//linkedlist ll = new linkedlist();
 
+		linkedlist ll2 = new linkedlist();
+		for (int i = 1; i <=5 ; i++) {
+			ll2.addfirst(i);		
+			size++;
+		}
+
+		ll2.printll();
+		System.out.println();
+		//System.out.println(size);
+		// ll2.addmiddle(11, 3);
+		// ll2.printll();
+        int a = sc.nextInt();
+		ll2.addmidle2(4,a);
+		System.out.println();
+		ll2.printll();
+		System.out.println();
+		ll2.delanyw(4);
+		ll2.printll();
 	}
 
 }

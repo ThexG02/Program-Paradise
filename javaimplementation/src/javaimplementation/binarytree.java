@@ -21,7 +21,7 @@ public class binarytree {
 	static  class btree {
 		static int idx = -1;
 
-		public static node btreebuilder(int nodes[]) {
+		public node btreebuilder(int nodes[]) {
 			idx++;
 			if (nodes[idx] == -1) {
 				return null;
@@ -167,7 +167,7 @@ public class binarytree {
 		btree tree = new btree();
 		node root = tree.btreebuilder(nodes);
 		int nodes2[]= {2,4,-1,-1,5,-1,-1};
-		btree tree2 = new btree();
+		
 		node subroot = tree.btreebuilder(nodes2);
 		// System.out.println(root.data);
 		preodr(root);
@@ -177,10 +177,10 @@ public class binarytree {
 //		System.out.println();
 //
 //		postodr(root);
-		// lvlodr(root);
+		 lvlodr(root);
 		// System.out.println( tnodes(root));
 		// System.out.println(diameter(root));
-		System.out.println(is_subtree(root,subroot));
+		///System.out.println(is_subtree(root,subroot));
 	}
 
 }
