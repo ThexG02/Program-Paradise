@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class MATRIX_TRAVERSAL {
 
     //ROW WISE TRAVERSAL IN A MATRIX
@@ -53,14 +56,51 @@ System.out.print(nums[j][i]);
         }
 
     }
+
+    // DIAGONAL TRAVERSAL IN A MATRIX
+    public static void traverseDiagonally(int[][] matrix) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        for (int col = 0; col < cols; col++) {
+            int startRow = 0;
+            int startCol = col;
+            List<Integer> diagonal = new ArrayList<>();
+            while (startRow < rows && startCol >= 0) {
+                diagonal.add(matrix[startRow][startCol]);
+                startRow++;
+                startCol--;
+            }
+            for (int val : diagonal) {
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
+
+        for (int row = 1; row < rows; row++) {
+            int startRow = row;
+            int startCol = cols - 1;
+            List<Integer> diagonal = new ArrayList<>();
+            while (startRow < rows && startCol >= 0) {
+                diagonal.add(matrix[startRow][startCol]);
+                startRow++;
+                startCol--;
+            }
+            for (int val : diagonal) {
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
         int nums[][] = {
             {1,2,3},
-            {8,9,4},
-            {7,6,5}};
+            {4,5,6},
+            {7,8,9}};
         //rowwisetraversal(nums);
         //coloumnwisetraversal(nums);
-        spiralmatrix(nums);
+        //spiralmatrix(nums);
+        traverseDiagonally(nums);
         }
     
 }
