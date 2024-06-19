@@ -1,8 +1,6 @@
 package javaimplementation;
+import java.util.*;
 
-import java.util.Scanner;
-
-import javaimplementation.binarytree.node;
 
 public class linkedlist {
     //CLASS FOR NODE GENERATION
