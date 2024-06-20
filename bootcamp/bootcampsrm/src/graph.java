@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.*;
 
 public class graph {
@@ -8,6 +7,20 @@ public class graph {
         for(Integer i: graph.get(node)){
             if(visited[i]==false){
                 dfs(graph, visited, node);
+            }
+        }
+    }
+    static void bfs(ArrayList<ArrayList<Integer>> graph, boolean[] visited, int v){
+        Queue<Integer> q= new LinkedList<>();
+        q.add(1);
+        while(!q.isEmpty()){
+            Integer node = q.poll();
+            System.out.println(node+" ");
+            for(Integer i: graph.get(node)){
+                if(visited[i]==false){
+                    visited[i]= true;
+                    q.add(i);
+                }
             }
         }
     }
@@ -36,5 +49,6 @@ public static void main(String[] args) {
     }
     boolean visited[]= new boolean[v+1];
     dfs(graph,visited,1);
+    bfs(graph,visited,1);
 }
 }
