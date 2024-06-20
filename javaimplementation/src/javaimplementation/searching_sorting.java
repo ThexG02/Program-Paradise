@@ -50,6 +50,28 @@ public class searching_sorting {
 			System.out.print(arr[k]);
 		}
 	}
+
+	// modified Bubble sort
+	public static void modifiedbbsrt(int arr[]) {
+		for(int i=0;i<arr.length-1;i++) {
+			boolean swap = false;
+			for(int j=0;j<arr.length-1-i;j++) {
+				if(arr[j]>arr[j+1]) {
+				//swap 
+				int temp=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=temp;
+				swap =true;
+				}			}
+			if(swap==false) {
+				break ;
+			}
+			
+		}
+		for(int k =0;k<arr.length;k++) {
+			System.out.print(arr[k]);
+		}
+	}
 	
 	// selection sort 
 	
@@ -77,6 +99,9 @@ public class searching_sorting {
 		selctionsort(arr);
 		System.out.println();
 		bbsrt(arr);
+		int a[]= {3,2,0,4,1};
+		modifiedbbsrt(a);
+
 	}
 	
 

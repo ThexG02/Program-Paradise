@@ -161,6 +161,7 @@ public class binarytree {
 //		int hgt=Math.max(linfo.ht, rinfo.ht)+1;
 //		return new info(diam,hgt);
 //	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };

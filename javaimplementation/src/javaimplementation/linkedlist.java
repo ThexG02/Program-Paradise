@@ -74,7 +74,7 @@ public class linkedlist {
 	}
 
 	//FUNCTION TO ADD A NODE IN THE MIDDLE OF THE LL USING TWO POINTER APPROACH
-	public static void addmidle2(int pos, int data){
+	public void addmidle2(int pos, int data){
 		Node newnode = new Node(data);
 		Node cur =head;
 		Node prev = null;
@@ -213,6 +213,7 @@ public class linkedlist {
 	
 	//MAIN FUNCTION
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
@@ -220,11 +221,11 @@ public class linkedlist {
 
 		linkedlist ll2 = new linkedlist();
 		for (int i = 1; i <=5 ; i++) {
-			ll2.addfirst(i);		
+			linkedlist.addfirst(i);		
 			size++;
 		}
 
-		ll2.printll();
+		linkedlist.printll();
 		System.out.println();
 		//System.out.println(size);
 		// ll2.addmiddle(11, 3);
@@ -232,10 +233,10 @@ public class linkedlist {
         int a = sc.nextInt();
 		ll2.addmidle2(4,a);
 		System.out.println();
-		ll2.printll();
+		linkedlist.printll();
 		System.out.println();
-		ll2.delanyw(4);
-		ll2.printll();
+		linkedlist.delanyw(4);
+		linkedlist.printll();
 	}
 
 }
