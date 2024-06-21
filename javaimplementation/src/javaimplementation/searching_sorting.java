@@ -73,7 +73,10 @@ public class searching_sorting {
 		}
 	}
 	
-	// selection sort O(n2)
+	/*selection sort 
+	concet -> select a minimum element and traverse the array 
+	and if array element is small then we swap the min and array index
+	O(n2)*/
 	
 	public static void selctionsort(int arr[]) {
 		for (int i=0;i<arr.length-1;i++) {
@@ -99,7 +102,11 @@ public class searching_sorting {
 		System.out.println();
 	}
 
-	//program for the insertion sort of an array O(n2)
+	
+	
+	/*program for the insertion sort of an array ,
+	 concept previous and current element , if(prev)>current then swap
+	  O(n2) */
 	public static void insertsrt(int arr[]){
 		for(int i=1;i<arr.length;i++){
 			int curr =arr[i];
@@ -111,6 +118,9 @@ public class searching_sorting {
 		}
 		arr[prev+1]=curr;
 	}}
+	
+	
+	
 	// Program for the merge sort of an array : concept -> divide and conqure O(nlogn)
 	public static void mergesort(int arr[], int si, int ei){
 		if(si>=ei){
@@ -121,6 +131,13 @@ public class searching_sorting {
 		mergesort(arr, mid+1, ei);
 		merge(arr, si, ei, mid);
 	
+	}
+
+
+	
+	//program for the Quick sort concet -> divide and conqure wcO(n2) , ac&bcO(nlogn)
+	public static void quicksrt(int arr[]){
+
 	}
 	public static int[] merge(int arr[], int si , int ei , int mid){
 	int temp[]= new int[ei-si+1];
