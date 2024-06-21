@@ -35,7 +35,7 @@ public class searching_sorting {
 	
 	//sorting -> Selection sort , Bubble sort, Insertion sort, Merge sort , Quick sort
 	
-	// Bubble sort
+	// Bubble sort O(n2)
 	public static void bbsrt(int arr[]) {
 		for(int i=0;i<arr.length-1;i++) {
 			for(int j=i;j<arr.length;j++) {
@@ -73,7 +73,7 @@ public class searching_sorting {
 		}
 	}
 	
-	// selection sort 
+	// selection sort O(n2)
 	
 	public static void selctionsort(int arr[]) {
 		for (int i=0;i<arr.length-1;i++) {
@@ -98,7 +98,20 @@ public class searching_sorting {
 		}
 		System.out.println();
 	}
-	// Program for the merge sort of an array : concept -> divide and conqure
+
+	//program for the insertion sort of an array O(n2)
+	public static void insertsrt(int arr[]){
+		for(int i=1;i<arr.length;i++){
+			int curr =arr[i];
+			int prev=i-1;
+		
+		while(prev>=0 && arr[prev]>curr){
+			arr[prev+1]=arr[prev];
+			prev--;
+		}
+		arr[prev+1]=curr;
+	}}
+	// Program for the merge sort of an array : concept -> divide and conqure O(nlogn)
 	public static void mergesort(int arr[], int si, int ei){
 		if(si>=ei){
 			return ;
@@ -138,6 +151,7 @@ public class searching_sorting {
 	return(arr);
 
 	}
+	//merge sort end here
 	public static void main(String[] args) {
 		int arr[] = { 5,4,1,3,2 };
 		printarr(arr);
@@ -147,7 +161,8 @@ public class searching_sorting {
 		// bbsrt(arr);
 		// int a[]= {3,2,0,4,1};
 		// modifiedbbsrt(a);
-		mergesort(arr, 0, arr.length-1);
+		//mergesort(arr, 0, arr.length-1);
+		insertsrt(arr);
 		printarr(arr);
 
 	}
