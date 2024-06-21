@@ -167,9 +167,9 @@ public class binarytree {
 		int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
 		btree tree = new btree();
 		node root = tree.btreebuilder(nodes);
-		int nodes2[]= {2,4,-1,-1,5,-1,-1};
+		//int nodes2[]= {2,4,-1,-1,5,-1,-1};
 		
-		node subroot = tree.btreebuilder(nodes2);
+		//node subroot = tree.btreebuilder(nodes2);
 		// System.out.println(root.data);
 		preodr(root);
 //		System.out.println();
