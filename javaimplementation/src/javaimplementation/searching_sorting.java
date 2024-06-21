@@ -53,9 +53,9 @@ public class searching_sorting {
 
 	// modified Bubble sort
 	public static void modifiedbbsrt(int arr[]) {
-		for(int i=0;i<arr.length-1;i++) {
+		for(int i=0;i<arr.length;i++) {
 			boolean swap = false;
-			for(int j=0;j<arr.length-1-i;j++) {
+			for(int j=0;j<arr.length-i;j++) {
 				if(arr[j]>arr[j+1]) {
 				//swap 
 				int temp=arr[j];
@@ -119,6 +119,56 @@ public class searching_sorting {
 		arr[prev+1]=curr;
 	}}
 	
+	/*program for the Quick sort concet -> divide and conqure
+	QUICK IS PREFFERED OVER MERGE SORT EVEN THEY HAVE TIME COMPLEXITY BECAUSE 
+	MERGE SORTS SPACE COMPLEXITY IS MORE THAN THAT OF QUICK SORT  
+	wcO(n2) , ac&bcO(nlogn)*/
+	public static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int p = partition(arr, low, high);
+            quickSort(arr, low, p - 1);
+            quickSort(arr, p + 1, high);
+        }
+    }
+
+    // Function to partition the array
+    public static int partition(int[] arr, int low, int high) {
+        int pivot = arr[low];
+        int i = low + 1;
+        int j = high;
+
+        while (i <= j) {
+            while (i <= j && arr[i] <= pivot) {
+                i++;
+            }
+            while (i <= j && arr[j] > pivot) {
+                j--;
+            }
+            if (i < j) {
+                // Swap arr[i] and arr[j]
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            } else {
+                break;
+            }
+        }
+        // Swap arr[low] and arr[j]
+        int temp = arr[low];
+        arr[low] = arr[j];
+        arr[j] = temp;
+        return j;
+    }
+
+    // Function to print the array
+    public static void printArray(int[] arr) {
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
+	
 	
 	
 	// Program for the merge sort of an array : concept -> divide and conqure O(nlogn)
@@ -133,12 +183,6 @@ public class searching_sorting {
 	
 	}
 
-
-	
-	//program for the Quick sort concet -> divide and conqure wcO(n2) , ac&bcO(nlogn)
-	public static void quicksrt(int arr[]){
-
-	}
 	public static int[] merge(int arr[], int si , int ei , int mid){
 	int temp[]= new int[ei-si+1];
 	int i= si;// itterator for the left reccursive part
@@ -179,8 +223,10 @@ public class searching_sorting {
 		// int a[]= {3,2,0,4,1};
 		// modifiedbbsrt(a);
 		//mergesort(arr, 0, arr.length-1);
-		insertsrt(arr);
+		//insertsrt(arr);
+		quickSort(arr, 0, arr.length-1);
 		printarr(arr);
+		
 
 	}
 	
