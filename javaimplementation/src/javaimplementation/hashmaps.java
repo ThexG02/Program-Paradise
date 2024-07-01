@@ -40,6 +40,41 @@ public class hashmaps {
 		return map.isEmpty();
 	} 
 
+	// Program to find the number of distinct element in an array
+	public static int diselearr(int[] arr){
+		HashSet<Integer> set = new HashSet<>();
+		for(int i=0;i<arr.length;i++){
+			set.add(arr[i]);
+		}
+		return set.size();
+	}
+
+	// program to find the intersection of two array
+	public static void intersection(int[] nums1, int[] nums2) {
+		Set<Integer> set1 = new HashSet<>();
+	   Set<Integer> set2 = new HashSet<>();
+	   
+	   for (int num : nums1) {
+		   set1.add(num);
+	   }
+	   
+	   for (int num : nums2) {
+		   set2.add(num);
+	   }
+	   
+	   set1.retainAll(set2);
+	   
+	   
+	   int[] result = new int[set1.size()];
+	   int index = 0;
+	   for (int num : set1) {
+		   result[index++] = num;
+	   }
+	   
+	  for(int i=0;i<result.length;i++){
+		System.out.print(result[i]);
+	  }
+   }
 	public static void main(String[] args) {
 		//HashMap : the key value insertion is in random order
 		HashMap<String,Integer> hm = new HashMap<>(); 
@@ -80,12 +115,51 @@ public class hashmaps {
 		// 	System.out.println(k+","+lm.get(k));
 		// }
 
-		// int arr[] ={1,3,2,5,1,3,1,5,1};
+		int arr[] ={1,3,2,5,1,3,1,5,1};
 		// majorele(arr);
-		String s="MANAN";
-		String t ="NAMAN";
-		System.out.println(isanagram(s, t));
+		// String s="MANAN";
+		// String t ="NAMAN";
+		// System.out.println(isanagram(s, t));
+
+
+		//Hashset : unique values , can store null values, implemented using hashmap
+		HashSet<String> citites = new HashSet<>();
+		citites.add("delhi"); 
+		citites.add("bengaluru"); 
+		citites.add("gurugram"); 
+		citites.add("hydrabad"); 
+		Iterator it = citites.iterator();
+		// while(it.hasNext()){
+		// 	System.out.print(it.next()+" ");
+		// }
+		//System.out.println();
+		//Treeset : unique values , can store null values , implemented using treemap self balancing
+		TreeSet<String> cars =new TreeSet<>();
+		cars.add("BMW");
+		cars.add("PORCHE");
+		cars.add("MAHINDRA");
+		cars.add("SKODA");
+		Iterator<String> cr= cars.iterator();
+		// while (cr.hasNext()) {
+		// 	System.out.print(cr.next()+" ");
+		// }
 		
+		//System.out.println();
+		//Linked hashset :unique , store null values , implemented using linked hashmap , uses linked list , sorted
+		LinkedHashSet<String> bikes = new LinkedHashSet<>();
+		bikes.add("yamaha");
+		bikes.add("honda");
+		bikes.add("aprillia");
+		bikes.add("kawasaki");
+		Iterator<String> bk = bikes.iterator();
+		// while(bk.hasNext()){
+		// 	System.out.print(bk.next()+" ");
+		// }
+		//System.out.println(diselearr(arr));
+		int nums1[]={7,3,9};
+		int nums2[]={6,3,9,2,9,4};
+		intersection(nums1, nums2);
+
 	}
 
 }
