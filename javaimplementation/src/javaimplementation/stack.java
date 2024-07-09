@@ -89,7 +89,7 @@ public static void nextgtr(int[] arr, int[] nextgtr){
 	}
 }
 
-// program for the valin parinthesis using stack
+// program for the valid parinthesis using stack
 public static boolean validparenthesis(String str){
 	Stack<Character> s= new Stack<>();
 	for(int i=0;i<str.length();i++){

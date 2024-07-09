@@ -101,7 +101,17 @@ public static int diasum(int[][] arr){
 	}}
 	return sum;
 }
-
+//program to remove an element from the array 
+public static int removeElement(int[] nums, int val) {
+	int i = 0;
+	  for (int j = 0; j < nums.length; j++) {
+		  if (nums[j] != val) {
+			  nums[i] = nums[j];
+			  i++;
+		  }
+	  }
+	  return i;
+  }
 	public static void main(String[] args) {
 		int[] arr ={1,-2,3,-4,-5,6};
 		int key =14;
@@ -112,12 +122,15 @@ public static int diasum(int[][] arr){
 		// }
 		//subarray(arr);
 		//System.err.println(KADAN(arr));
-		int [][] arrl={{1,2,3},
-					   {8,9,4},
-				       {7,6,5}
-						};
+		// int [][] arrl={{1,2,3},
+		// 			   {8,9,4},
+		// 		       {7,6,5}
+		// 				};
 		//spiralmatrix(arrl);
-		System.out.println(diasum(arrl));
+		//System.out.println(diasum(arrl));
+		int  arrrem[] = {3,22,2,3,42,1,3};
+		System.out.println(removeElement(arrrem, 3));
+
 	}
 
 }
