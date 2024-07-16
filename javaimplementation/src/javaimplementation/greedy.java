@@ -1,4 +1,5 @@
 package javaimplementation;
+import java.lang.reflect.Array;
 import java.util.*;
 public class greedy {
 //activity selection / maximum number of meetings in a room / Disjoint set
@@ -46,13 +47,42 @@ public static int Actslct(int[]start, int[] end){
     return maxact;
 
 }
+
+// program to impement the fractional knapsack 
+public static int fractknapsack(int[]value ,int[] weight , int w){
+double ratio[][]=new double[value.length][2];
+for(int i=0;i<value.length;i++){
+ratio[i][0]=i;
+ratio[i][1]=value[i]/(double)weight[i];
+}
+Arrays.sort(ratio,Comparator.comparingDouble(i->i[1]));
+int finalval=0;
+int capacity=w;
+for(int i=ratio.length-1;i>=0;i--){
+    int idx =(int)ratio[i][0];
+    if(capacity>=weight[idx]){
+        finalval+=value[idx];
+        capacity-=weight[idx];
+    }
+    else{
+        finalval+=(ratio[i][1]*capacity);
+        capacity=0;
+        break;
+    }
+}
+return finalval;
+}
 public static void main(String[] args) {
-    int start[]={1,3,0,5,8,5};
-    int end[]={2,4,6,7,9,9};
-    int nsrt_start[]={0,1,3,5,5,8};
-    int nsrt_end[]={6,2,4,9,7,9};
-    System.out.println(Actslctsrt(start, end));
-    System.out.println(Actslct(nsrt_start, nsrt_end));
+    // int start[]={1,3,0,5,8,5};
+    // int end[]={2,4,6,7,9,9};
+    // int nsrt_start[]={0,1,3,5,5,8};
+    // int nsrt_end[]={6,2,4,9,7,9};
+    // System.out.println(Actslctsrt(start, end));
+    // System.out.println(Actslct(nsrt_start, nsrt_end));
+    int val[]={60,100,120};
+    int weight[]={10,20,30};
+    int capacity=50;
+    System.err.println(fractknapsack(val, weight, capacity));
 }
 
 }
