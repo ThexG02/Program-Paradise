@@ -27,6 +27,18 @@ public class ArrayList {
         //     System.out.println(x);
         // }
 
+        //ADDALL , LISTOF , ARRAYASLISt 
+
+      List lisr1=  List.of(11,22,33,44);
+      List list2= Arrays.asList(100,200,300);
+        list.addAll(lisr1);
+        list.addAll(list2);
+
+        for (int x : list) {
+            System.out.println(x);
+        }
+        
+
     }
 
 }
