@@ -1,0 +1,98 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "LinkedList",
+            "request": "launch",
+            "mainClass": "LinkedList",
+            "projectName": "Program-Paradise_43f4c2f7"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "ArrayList",
+            "request": "launch",
+            "mainClass": "ArrayList",
+            "projectName": "Program-Paradise_43f4c2f7"
+        },
+        {
+            "type": "java",
+            "name": "array",
+            "request": "launch",
+            "mainClass": "javaimplementation/javaimplementation.array",
+            "projectName": "javaimplementation"
+        },
+        {
+            "type": "java",
+            "name": "arraylistimp",
+            "request": "launch",
+            "mainClass": "javaimplementation/javaimplementation.arraylistimp",
+            "projectName": "javaimplementation"
+        },
+        {
+            "type": "java",
+            "name": "binarytree",
+            "request": "launch",
+            "mainClass": "javaimplementation/javaimplementation.binarytree",
+            "projectName": "javaimplementation"
+        },
+        {
+            "type": "java",
+            "name": "greedy",
+            "request": "launch",
+            "mainClass": "javaimplementation/javaimplementation.greedy",
+            "projectName": "javaimplementation"
+        },
+        {
+            "type": "java",
+            "name": "greedy1",
+            "request": "launch",
+            "mainClass": "javaimplementation/javaimplementation.greedy1",
+            "projectName": "javaimplementation"
+        },
+        {
+            "type": "java",
+            "name": "hashmaps",
+            "request": "launch",
+            "mainClass": "javaimplementation/javaimplementation.hashmaps",
+            "projectName": "javaimplementation"
+        },
+        {
+            "type": "java",
+            "name": "linkedlist",
+            "request": "launch",
+            "mainClass": "javaimplementation/javaimplementation.linkedlist",
+            "projectName": "javaimplementation"
+        },
+        {
+            "type": "java",
+            "name": "searching_sorting",
+            "request": "launch",
+            "mainClass": "javaimplementation/javaimplementation.searching_sorting",
+            "projectName": "javaimplementation"
+        },
+        {
+            "type": "java",
+            "name": "stack",
+            "request": "launch",
+            "mainClass": "javaimplementation/javaimplementation.stack",
+            "projectName": "javaimplementation"
+        },
+        {
+            "type": "java",
+            "name": "strings",
+            "request": "launch",
+            "mainClass": "javaimplementation/javaimplementation.strings",
+            "projectName": "javaimplementation"
+        }
+    ]
+}
