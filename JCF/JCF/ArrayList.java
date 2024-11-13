@@ -9,7 +9,7 @@ public class ArrayList {
         list.add(30);
         list.add(99);
         list.add(20);
-        
+        System.out.println(list.size());
         for (int x : list) {
             System.out.println(x);
         }
@@ -29,8 +29,8 @@ public class ArrayList {
 
         //ADDALL , LISTOF , ARRAYASLISt 
 
-      List lisr1=  List.of(11,22,33,44);
-      List list2= Arrays.asList(100,200,300);
+      List lisr1=  List.of(11,22,33,44); //Immutable fixed size
+      List list2= Arrays.asList(100,200,300); //mutable fixed size
         list.addAll(lisr1);
         list.addAll(list2);
 
@@ -38,6 +38,8 @@ public class ArrayList {
             System.out.println(x);
         }
         
+        System.out.println();
+        System.out.println(list.size());
 
     }
 
