@@ -22,10 +22,10 @@ public class ArrayList {
         // }
 
         //REMOVE
-        list.remove(3);
-        for (int x : list) {
-            System.out.println(x);
-        }
+        // list.remove(3);
+        // for (int x : list) {
+        //     System.out.println(x);
+        // }
 
     }
 
