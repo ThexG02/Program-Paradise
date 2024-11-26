@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DSAREVISION",
+            "request": "launch",
+            "mainClass": "javaimplementation/javaimplementation.DSAREVISION",
+            "projectName": "javaimplementation"
+        },
+        {
+            "type": "java",
             "name": "LinkedList",
             "request": "launch",
             "mainClass": "LinkedList",

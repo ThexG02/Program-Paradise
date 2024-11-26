@@ -126,7 +126,7 @@ public class linkedlist {
 			i++;
 		}
 		prev.next = prev.next.next;
-		return;
+		
 
 	}
     
