@@ -95,6 +95,34 @@ public class DSAREVISION {
         
     // }
 
+    public static class Node{
+        int data;
+        Node left;
+        Node right;
+        public Node(int data){
+            this.data=data;
+            this.right=null;
+            this.left=null;
+        }
+    }
+
+    public static class BuildTree{
+        static int idx =-1;
+        public static Node builBtree(int[] nodes){
+            idx++;
+            if(nodes[idx]==-1){
+                return null;
+
+            }
+            Node nn = new Node(nodes[idx]);
+            nn.left=builBtree(nodes);
+            nn.right=builBtree(nodes);
+            return nn;
+        }
+
+    }
+
+
     
     public static void main(String[] args) {
         // int arr[] = { 1, 2, 3, 4, 5 };
@@ -106,6 +134,10 @@ public class DSAREVISION {
 
         //arrayRev(arr);
         //System.out.println(Bsearch(arr, 37));
+        int arr[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
+        BuildTree tree = new BuildTree();
+       Node root = tree.builBtree(arr);
+        System.out.println(root.data);
     }
 
 }

@@ -161,6 +161,61 @@ public class binarytree {
 //		int hgt=Math.max(linfo.ht, rinfo.ht)+1;
 //		return new info(diam,hgt);
 //	}
+
+//Kth level 
+public static void klvl(node root , int lvl , int k){
+	if(root == null){
+		return ;
+	}
+	if(lvl == k){
+		System.out.print(root.data);
+		return;
+	}
+	klvl(root.left, lvl+1, k);
+	klvl(root.right, lvl+1, k);
+
+}
+
+
+//Lowest Common Ancestor
+public static node lca(node root , int p , int q){
+	if(root ==null|| root.data ==p || root.data ==q){
+		return root;
+	}
+	node llca=lca(root.left, p, q);
+	node rlca =lca(root.right, p, q);
+
+	if(llca==null){
+		return rlca;
+	}
+	if(rlca == null){
+		return llca;
+	}
+	System.out.println(root.data);
+	return root;
+}
+
+//transform to sum tree
+
+public static int sumtree(node root ){
+	if(root ==null){
+		return 0;
+	}
+	int lc = sumtree(root.left);
+	int rc = sumtree(root.right);
+	int data = root.data;
+	int newleft = root.left==null? 0:root.left.data;
+	int newright = root.right==null? 0:root.right.data;
+
+	
+	root.data = lc+rc+ newleft+newright;
+	return data;
+
+}
+
+//Kth ancestor 
+
+//minimum diatance b/w two nodes
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -171,17 +226,23 @@ public class binarytree {
 		
 		//node subroot = tree.btreebuilder(nodes2);
 		// System.out.println(root.data);
-		preodr(root);
+		// preodr(root);
 //		System.out.println();
 //
 //		inodr(root);
 //		System.out.println();
 //
 //		postodr(root);
-		 lvlodr(root);
+		//lvlodr(root);
 		// System.out.println( tnodes(root));
 		// System.out.println(diameter(root));
 		///System.out.println(is_subtree(root,subroot));
+		
+
+		//klvl(root, 1, 2);
+		//System.out.println(lca(root, 4, 5));
+		sumtree(root);	
+		preodr(root);	
 	}
 
 }
