@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BST",
+            "request": "launch",
+            "mainClass": "javaimplementation/javaimplementation.BST",
+            "projectName": "javaimplementation"
+        },
+        {
+            "type": "java",
             "name": "DSAREVISION",
             "request": "launch",
             "mainClass": "javaimplementation/javaimplementation.DSAREVISION",
